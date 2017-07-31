@@ -3,7 +3,7 @@ This is just a sample for now. It will be a library soon.
 
 ## Screenshots
 
-![](http://imgur.com/a/N0x3P)
+![](http://i.imgur.com/s1lyjij.png)
 
 
 
