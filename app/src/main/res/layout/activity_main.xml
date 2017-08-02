@@ -4,18 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.emredavarci.circleprogressbar.MainActivity"
-    android:id="@+id/rlMain">
+    tools:context="com.emredavarci.circleprogressbar.MainActivity">
 
-    <ProgressBar
+    <!--<com.emredavarci.circleprogressbar.CircleProgressBar-->
+        <!--xmlns:cpb="http://schemas.android.com/apk/lib/com.emredavarci.circleprogressbar.CircleProgressBar"-->
+        <!--android:id="@+id/progressBar"-->
+        <!--style="?android:attr/progressBarStyleHorizontal"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--cpb:radius="15dp"/>-->
+
+    <com.emredavarci.circleprogressbar.CircleProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_centerVertical="true"
+        app:progressColor="#c334ca"
+        app:strokeWidth="10"
+        app:textSize="18sp"
+        app:unit="%"
         android:layout_centerHorizontal="true"
-        android:max="500"
-        android:progress="0"
-        android:progressDrawable="@drawable/circular" />
+        android:layout_centerVertical="true"/>
 
 </RelativeLayout>
