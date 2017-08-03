@@ -1,3 +1,7 @@
+app/src/main/java/com/emredavarci/circleprogressbar/CircleProgressBarTest.java
+app/src/main/java/com/emredavarci/circleprogressbar/MainActivity.java
+app/src/main/res/drawable/
+app/src/main/res/layout/
 *.iml
 .gradle
 /local.properties
