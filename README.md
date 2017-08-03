@@ -50,14 +50,14 @@ You can modify it programmatically if you want
 
 ```java
 	progressBar.setProgress(progress); 			// set progress value
-	progressBar.setMaxValue(100); 					// set progress max value
+	progressBar.setMaxValue(100); 				// set progress max value
 	progressBar.setStrokeWidth(10); 			// set stroke width
-	progressBar.setBackgroundWidth(10); 			// set progress background width
+	progressBar.setBackgroundWidth(10); 		// set progress background width
 	progressBar.setProgressColor("#FF6FD99D"); 	// set progress color
 	progressBar.setBackgroundColor("#FFF9916B"); 	// set progress backgorund color
 	progressBar.setText(String.valueOf(progress)); 	// set progress text
 	progressBar.setTextColor("#FF6FD99D"); 			// set text color
-	progressBar.setUnit("%"); 					// set progress unit
+	progressBar.setUnit("%"); 			// set progress unit
 ```
 
 <b>Getters</b>
