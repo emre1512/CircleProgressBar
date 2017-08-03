@@ -63,15 +63,15 @@ You can modify it programmatically if you want
 <b>Getters</b>
 
 ```java
-	progressBar.getProgress();				// get progress value
-	progressBar.getMaxValue();				// get progress max value
-	progressBar.getStrokeWidth();				// get stroke width
-	progressBar.getBackgroundWidth();			// get progress background width
-	progressBar.getProgressColor();				// get progress color
-	progressBar.getBackgroundColor();			// get progress backgorund color
-	progressBar.getText();  				// get progress text
-	progressBar.getTextColor();				// get text color
-	progressBar.getUnit();					// get progress unit
+	progressBar.getProgress();			// get progress value
+	progressBar.getMaxValue();			// get progress max value
+	progressBar.getStrokeWidth();			// get stroke width
+	progressBar.getBackgroundWidth();		// get progress background width
+	progressBar.getProgressColor();			// get progress color
+	progressBar.getBackgroundColor();		// get progress backgorund color
+	progressBar.getText();  			// get progress text
+	progressBar.getTextColor();			// get text color
+	progressBar.getUnit();				// get progress unit
 ```
 
 ## LICENSE
