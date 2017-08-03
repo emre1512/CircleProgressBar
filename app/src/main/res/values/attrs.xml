@@ -4,10 +4,12 @@
         <attr name="progressColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
         <attr name="strokeWidth" format="float"/>
+        <attr name="backgroundWidth" format="float"/>
         <attr name="roundedCorners" format="boolean"/>
         <attr name="maxValue" format="float"/>
-        <attr name="textColor" format="color"/>
+        <attr name="progressTextColor" format="color"/>
         <attr name="textSize" format="dimension"/>
+        <attr name="progressText" format="string"/>
         <attr name="unit" format="string"/>
     </declare-styleable>
 </resources>

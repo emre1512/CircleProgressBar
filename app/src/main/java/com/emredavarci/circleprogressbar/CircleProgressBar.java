@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by user on 02.08.2017.
+ * Created by M. Emre Davarci on 02.08.2017.
  */
 
 public class CircleProgressBar extends View {
@@ -39,10 +39,11 @@ public class CircleProgressBar extends View {
     private int progressColor;
     private int backgroundColor;
     private float strokeWidth;
+    private float backgroundWidth;
     private boolean roundedCorners;
     private float maxValue;
 
-    private int textColor = Color.BLACK;
+    private int progressTextColor = Color.BLACK;
     private float textSize = 18;
     private String text = "";
     private String unit = "";
@@ -67,11 +68,13 @@ public class CircleProgressBar extends View {
         progressColor = ta.getColor(R.styleable.CircleProgressBar_progressColor, Color.BLUE);
         backgroundColor = ta.getColor(R.styleable.CircleProgressBar_backgroundColor, Color.GRAY);
         strokeWidth = ta.getFloat(R.styleable.CircleProgressBar_strokeWidth, 10);
+        backgroundWidth = ta.getFloat(R.styleable.CircleProgressBar_backgroundWidth, 10);
         roundedCorners = ta.getBoolean(R.styleable.CircleProgressBar_roundedCorners, false);
         maxValue = ta.getFloat(R.styleable.CircleProgressBar_maxValue, 100);
-        textColor = ta.getColor(R.styleable.CircleProgressBar_textColor, Color.BLACK);
+        progressTextColor = ta.getColor(R.styleable.CircleProgressBar_progressTextColor, Color.BLACK);
         textSize = ta.getDimension(R.styleable.CircleProgressBar_textSize, 18);
         unit = ta.getString(R.styleable.CircleProgressBar_unit);
+        text = ta.getString(R.styleable.CircleProgressBar_progressText);
 
         progressBarPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         progressBarPaint.setStyle(Paint.Style.FILL);
@@ -90,7 +93,7 @@ public class CircleProgressBar extends View {
         bacgroundPaint.setStyle(Paint.Style.FILL);
         bacgroundPaint.setColor(backgroundColor);
         bacgroundPaint.setStyle(Paint.Style.STROKE);
-        bacgroundPaint.setStrokeWidth(strokeWidth * getResources().getDisplayMetrics().density);
+        bacgroundPaint.setStrokeWidth(backgroundWidth * getResources().getDisplayMetrics().density);
         bacgroundPaint.setStrokeCap(Paint.Cap.SQUARE);
         String bc = String.format("#%06X", (0xFFFFFF & backgroundColor));
         bacgroundPaint.setColor(Color.parseColor(bc));
@@ -98,8 +101,8 @@ public class CircleProgressBar extends View {
         ta.recycle();
 
         textPaint = new TextPaint();
-        textPaint.setColor(textColor);
-        String c = String.format("#%06X", (0xFFFFFF & textColor));
+        textPaint.setColor(progressTextColor);
+        String c = String.format("#%06X", (0xFFFFFF & progressTextColor));
         textPaint.setColor(Color.parseColor(c));
         textPaint.setTextSize(textSize);
         textPaint.setAntiAlias(true);
@@ -128,15 +131,6 @@ public class CircleProgressBar extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-//        float yHeight = getProgress() / (float) getMaxValue() * getHeight();
-//        float radius = getWidth() / 2f;
-//        float angle = (float) (Math.acos((radius - yHeight) / radius) * 180 / Math.PI);
-//        float startAngle = 90 + angle;
-//        float sweepAngle = 360 - angle * 2;
-//        canvas.drawArc(mArcBounds, startAngle, sweepAngle, false, bacgroundPaint);
-//        canvas.drawArc(mArcBounds, 270 - angle, angle * 2, false, progressBarPaint);
-
-
         float mouthInset = mRadius / 3;
         mArcBounds.set(mouthInset, mouthInset, mRadius * 2 - mouthInset, mRadius * 2 - mouthInset);
         canvas.drawArc(mArcBounds, 0f, 360f, false, bacgroundPaint);
@@ -155,6 +149,7 @@ public class CircleProgressBar extends View {
 
     }
 
+
     public void setProgress(float f){
         drawUpto = f;
         invalidate();
@@ -170,11 +165,23 @@ public class CircleProgressBar extends View {
 
     public void setProgressColor(int color){
         progressColor = color;
+        progressBarPaint.setColor(color);
+        invalidate();
+    }
+
+    public void setProgressColor(String color){
+        progressBarPaint.setColor(Color.parseColor(color));
         invalidate();
     }
 
     public void setBackgroundColor(int color){
         backgroundColor = color;
+        bacgroundPaint.setColor(color);
+        invalidate();
+    }
+
+    public void setBackgroundColor(String color){
+        bacgroundPaint.setColor(Color.parseColor(color));
         invalidate();
     }
 
@@ -192,6 +199,19 @@ public class CircleProgressBar extends View {
         invalidate();
     }
 
+    public float getStrokeWidth(){
+        return strokeWidth;
+    }
+
+    public void setBackgroundWidth(float width){
+        backgroundWidth = width;
+        invalidate();
+    }
+
+    public float getBackgroundWidth(){
+        return backgroundWidth;
+    }
+
     public void setText(String progressText){
         text = progressText;
         invalidate();
@@ -202,19 +222,18 @@ public class CircleProgressBar extends View {
     }
 
     public void setTextColor(int color){
-        textColor = color;
+        progressTextColor = color;
         textPaint.setColor(color);
         invalidate();
     }
 
     public void setTextColor(String color){
-        String c = String.format("#%06X", (0xFFFFFF & Integer.valueOf(color)));
-        textPaint.setColor(Color.parseColor(c));
+        textPaint.setColor(Color.parseColor(color));
         invalidate();
     }
 
     public int getTextColor(){
-        return textColor;
+        return progressTextColor;
     }
 
     public void setUnit(String unit){
