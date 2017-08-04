@@ -13,7 +13,7 @@ A simple library for creating circular progressbars for Android.
 
 ## Installation
 
-- Get it via gradle: ``` compile 'com.emredavarci:circleprogressbar:1.0.3
+- Get it via gradle: ``` compile 'com.emredavarci:circleprogressbar:1.0.3 ```
 ## Usage
 
 1) Add CircleProgressBar to your layout
