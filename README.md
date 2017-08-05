@@ -3,7 +3,7 @@
 ![https://github.com/emre1512/CircleProgressBar](https://img.shields.io/badge/platform-Android-green.svg?style=flat-square)
 ![https://github.com/emre1512/CircleProgressBar](https://img.shields.io/badge/API-16+-orange.svg?style=flat-square)
 ![https://www.apache.org/licenses/LICENSE-2.0](https://img.shields.io/badge/licence-Apache%20v2.0-blue.svg?style=flat-square)
-![https://github.com/emre1512/CircleProgressBar](https://img.shields.io/badge/version-v1.0.3-ff69b4.svg?style=flat-square)
+![https://github.com/emre1512/CircleProgressBar](https://img.shields.io/badge/version-v1.0.4-ff69b4.svg?style=flat-square)
 
 A simple library for creating circular progressbars for Android.
 
@@ -13,7 +13,7 @@ A simple library for creating circular progressbars for Android.
 
 ## Installation
 
-- Get it via gradle: ``` compile 'com.emredavarci:circleprogressbar:1.0.3' ```
+- Get it via gradle: ``` compile 'com.emredavarci:circleprogressbar:1.0.4' ```
 ## Usage
 
 1) Add CircleProgressBar to your layout
@@ -30,7 +30,8 @@ A simple library for creating circular progressbars for Android.
         cpb:backgroundWidth="8"
         cpb:textSize="18sp"
         cpb:roundedCorners="true"
-        cpb:unit="%"
+        cpb:suffix="%"
+        cpb:prefix=""
         cpb:progressText="Loading..."
         cpb:maxValue="100"
         cpb:progressTextColor="#f9916b"/>
@@ -56,13 +57,15 @@ You can modify it programmatically if you want
 	progressBar.setBackgroundColor("#FFF9916B"); 	// set progress backgorund color
 	progressBar.setText(String.valueOf(progress)); 	// set progress text
 	progressBar.setTextColor("#FF6FD99D"); 		// set text color
-	progressBar.setUnit("%"); 			// set progress unit
+	progressBar.setSuffix("%"); 			// set suffix
+	progressBar.setPrefix(""); 				// set prefix
 ```
 
 <b>Getters</b>
 
 ```java
 	progressBar.getProgress();			// get progress value
+	progressBar.getProgressPercentage();			// get progress percentage
 	progressBar.getMaxValue();			// get progress max value
 	progressBar.getStrokeWidth();			// get stroke width
 	progressBar.getBackgroundWidth();		// get progress background width
@@ -70,7 +73,8 @@ You can modify it programmatically if you want
 	progressBar.getBackgroundColor();		// get progress backgorund color
 	progressBar.getText();  			// get progress text
 	progressBar.getTextColor();			// get text color
-	progressBar.getUnit();				// get progress unit
+	progressBar.getSuffix();				// get suffix
+	progressBar.getPrefix();				// get prefix
 ```
 
 ## LICENSE

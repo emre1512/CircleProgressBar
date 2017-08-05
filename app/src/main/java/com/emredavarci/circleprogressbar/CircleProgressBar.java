@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.preference.Preference;
 import android.text.Html;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -46,7 +47,8 @@ public class CircleProgressBar extends View {
     private int progressTextColor = Color.BLACK;
     private float textSize = 18;
     private String text = "";
-    private String unit = "";
+    private String suffix = "";
+    private String prefix = "";
 
     int defStyleAttr;
 
@@ -73,7 +75,8 @@ public class CircleProgressBar extends View {
         maxValue = ta.getFloat(R.styleable.CircleProgressBar_maxValue, 100);
         progressTextColor = ta.getColor(R.styleable.CircleProgressBar_progressTextColor, Color.BLACK);
         textSize = ta.getDimension(R.styleable.CircleProgressBar_textSize, 18);
-        unit = ta.getString(R.styleable.CircleProgressBar_unit);
+        suffix = ta.getString(R.styleable.CircleProgressBar_suffix);
+        prefix = ta.getString(R.styleable.CircleProgressBar_prefix);
         text = ta.getString(R.styleable.CircleProgressBar_progressText);
 
         progressBarPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -136,11 +139,15 @@ public class CircleProgressBar extends View {
         canvas.drawArc(mArcBounds, 0f, 360f, false, bacgroundPaint);
         canvas.drawArc(mArcBounds, 270f, drawUpto / getMaxValue() * 360, false, progressBarPaint);
 
-        if(TextUtils.isEmpty(unit)){
-            unit = "";
+        if(TextUtils.isEmpty(suffix)){
+            suffix = "";
         }
 
-        String drawnText = unit + text;
+        if(TextUtils.isEmpty(prefix)){
+            prefix = "";
+        }
+
+        String drawnText = prefix + text + suffix;
 
         if (!TextUtils.isEmpty(text)) {
             float textHeight = textPaint.descent() + textPaint.ascent();
@@ -236,13 +243,22 @@ public class CircleProgressBar extends View {
         return progressTextColor;
     }
 
-    public void setUnit(String unit){
-        this.unit = unit;
+    public void setSuffix(String suffix){
+        this.suffix = suffix;
         invalidate();
     }
 
-    public String getUnit(){
-        return unit;
+    public String getSuffix(){
+        return suffix;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+        invalidate();
     }
 }
 

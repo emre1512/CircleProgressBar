@@ -10,6 +10,7 @@
         <attr name="progressTextColor" format="color"/>
         <attr name="textSize" format="dimension"/>
         <attr name="progressText" format="string"/>
-        <attr name="unit" format="string"/>
+        <attr name="suffix" format="string"/>
+        <attr name="prefix" format="string"/>
     </declare-styleable>
 </resources>
