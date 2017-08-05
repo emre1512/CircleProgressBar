@@ -58,14 +58,14 @@ You can modify it programmatically if you want
 	progressBar.setText(String.valueOf(progress)); 	// set progress text
 	progressBar.setTextColor("#FF6FD99D"); 		// set text color
 	progressBar.setSuffix("%"); 			// set suffix
-	progressBar.setPrefix(""); 				// set prefix
+	progressBar.setPrefix(""); 			// set prefix
 ```
 
 <b>Getters</b>
 
 ```java
 	progressBar.getProgress();			// get progress value
-	progressBar.getProgressPercentage();			// get progress percentage
+	progressBar.getProgressPercentage();		// get progress percentage
 	progressBar.getMaxValue();			// get progress max value
 	progressBar.getStrokeWidth();			// get stroke width
 	progressBar.getBackgroundWidth();		// get progress background width
@@ -73,8 +73,8 @@ You can modify it programmatically if you want
 	progressBar.getBackgroundColor();		// get progress backgorund color
 	progressBar.getText();  			// get progress text
 	progressBar.getTextColor();			// get text color
-	progressBar.getSuffix();				// get suffix
-	progressBar.getPrefix();				// get prefix
+	progressBar.getSuffix();			// get suffix
+	progressBar.getPrefix();			// get prefix
 ```
 
 ## LICENSE
