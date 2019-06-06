@@ -26,7 +26,7 @@ A simple library for creating circular progressbars for Android.
         android:layout_height="150dp"
         cpb:progressColor="#e76130"
         cpb:backgroundColor="#e7b330"
-        cpb:strokeWidth="14"
+        cpb:dimension="14"
         cpb:backgroundWidth="8"
         cpb:textSize="18sp"
         cpb:roundedCorners="true"
