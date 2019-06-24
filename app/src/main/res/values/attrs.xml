@@ -3,7 +3,7 @@
     <declare-styleable name="CircleProgressBar">
         <attr name="progressColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
-        <attr name="strokeWidth" format="dimension"/>
+        <attr name="strokeWidthDimension" format="dimension"/>
         <attr name="backgroundWidth" format="float"/>
         <attr name="roundedCorners" format="boolean"/>
         <attr name="maxValue" format="float"/>

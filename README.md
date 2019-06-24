@@ -51,7 +51,7 @@ You can modify it programmatically if you want
 ```java
 	progressBar.setProgress(progress); 		// set progress value
 	progressBar.setMaxValue(100); 			// set progress max value
-	progressBar.setStrokeWidth(10); 		// set stroke width
+	progressBar.setStrokeWidthDimension(10); 		// set stroke width
 	progressBar.setBackgroundWidth(10); 		// set progress background width
 	progressBar.setProgressColor("#FF6FD99D"); 	// set progress color
 	progressBar.setBackgroundColor("#FFF9916B"); 	// set progress backgorund color
@@ -67,7 +67,7 @@ You can modify it programmatically if you want
 	progressBar.getProgress();			// get progress value
 	progressBar.getProgressPercentage();		// get progress percentage
 	progressBar.getMaxValue();			// get progress max value
-	progressBar.getStrokeWidth();			// get stroke width
+	progressBar.getStrokeWidthDimension();			// get stroke width
 	progressBar.getBackgroundWidth();		// get progress background width
 	progressBar.getProgressColor();			// get progress color
 	progressBar.getBackgroundColor();		// get progress backgorund color
