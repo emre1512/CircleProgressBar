@@ -1,23 +1,69 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.android.library'
+apply plugin: 'com.aliasadi.bintray-upload'
+
+//publish {
+//    userOrg = "emredavarci"
+//    groupId = "com.emredavarci"
+//    artifactId = "circleprogressbar"
+//    publishVersion = "1.0.6"
+//    desc = "An easy to use circular progressbar for Android"
+//    website = "https://github.com/emre1512/CircleProgressBar"
+//}
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
-//        classpath 'com.android.tools.build:gradle:2.3.1'
-        classpath 'com.android.tools.build:gradle:2.3.0+'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+
+        classpath 'com.android.tools.build:gradle:3.5.0'
+   //     classpath 'com.novoda:bintray-release:0.8.1'
+        classpath "com.aliasadi:bintray-upload:1.0.1"
+
     }
+
 }
+
 
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.0'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 3
+        versionName "1.0.8"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+uploadToBintray {
+    versionName = '1.0.8'
+    groupId = 'com.emredavarci'
+    artifactId = 'CircleProgressBar'
+    gitUrl = 'https://github.com/emre1512/CircleProgressBar'
 }
